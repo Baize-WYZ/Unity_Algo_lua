@@ -28,3 +28,5 @@ https://docs.unity3d.com/cn/2019.4/Manual/Packages.html
     返回path的绝对路径 在System.IO 命名空间下。
 6.Package Manager 优先选择从其他来源安装的包（如嵌入式包和使用本地路径、Git URL 声明的依赖项和内置包）
 
+7.创建自定义包
+    
