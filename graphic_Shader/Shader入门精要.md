@@ -49,7 +49,7 @@
 		- 环境光 通常是一个全局变量。用于去模拟间接光照
 			- $C_ambient = G_ambient $
 		- 漫反射 公式。描述物体表面光线的散射。满足兰伯特定律
-			- $C_diffuse =(C_light · M_diffuse)Max(0,$\vec{n}$·$\vec{I}$)$
+			- $C_diffuse =(C_light · M_diffuse)Max(0,\vec{n}·\vec{I})$
 		- 高光反射 2个公式。一个是高光反射的计算公式，另一个是反射方向的计算公式。
 			- 反射方向
 				- 
