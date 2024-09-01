@@ -1,4 +1,5 @@
-> vscode中预览Markdown、LaTex内容 ctrl+shift+v
+> vscode中预览Markdown、LaTex内容 ctrl+shift+v   
+> Markdown是允许嵌入html标签
 
 1.**声明标题** 使用 # 符号表示标题，# 的数量对应标题的级别（需要文本中单行顶格）    
 例如
@@ -34,3 +35,42 @@
 1. 111
 2. 222
 3. 333
+
+7.**外链** `[显示文本](URL)`   
+[百度](www.baidu.com)
+
+8.**图片** `![替代文本](图片URL或路径)`  
+
+![markdown测试图片](markdown测试.jpg) 表示有图片则加载没有就显示前面的text
+
+[markdown测试图片](markdown测试.jpg) 则只显示超链
+
+调整图片大小
+<img src="markdown测试.jpg" alt="markdown测试图片修改长宽" width="50px" height="50px">
+
+<img src="markdown测试.jpg" alt="markdown测试图片修改长宽" style="width:20%; height:auto;">
+
+9.**引用** `>` 引用一段文本 
+>引用内容   
+asd
+
+10.**代码** 引用代码 使用```   
+下例子中c# 表示注明代码的语言类型
+```c#
+public void Hello(){
+    return "你好"；
+}
+```
+
+11.**表格**  使用`|`分隔列，使用`-`分隔表头和表内容   
+| 标题1 | 标题2 |
+| ------ | ------ |
+| 内容1 | 内容2 |
+
+12.**分割线**  `---` `***` `___`去画一个分割线
+
+---
+或者
+***
+或者
+___
