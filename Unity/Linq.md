@@ -56,6 +56,39 @@ LINQ
         8）var orders = from c in customers where c.Region == "WA" from o in c.Orders where o.OrderDate >= cutoffDate select (c.CustomerID, o.OrderID);
             嵌套from中使用过滤器 where
         9）customers.Where((value)=> true).Select((value, idx) => new { index = idx, val = value });
-        
+    3.Take
+    取一个集合的前几个元素
+        1）numbers.Take(2)
+    4.TakeWhile 
+    按条件从头开始取满足条件的元素 但是遇到不满足条件的就会直接停止，不会像Where去筛选全部满足条件的元素
+        1）var firstNumbersLessThan6 = numbers.TakeWhile(n => n < 6);
+        2）var firstSmallNumbers = numbers.TakeWhile((n, index) => n >= index);
+    5.Skip
+    跳过一个集合的前几个元素
+        1）numbers.Skip(2)
+    6.SkipWhile 
+    按条件从头开始跳过满足条件的元素 但是遇到不满足条件的就会直接停止
+        1）var allButFirst3Numbers = numbers.SkipWhile(n => n % 3 != 0);
+        2）var laterNumbers = numbers.SkipWhile((n, index) => n >= index);
+    7.OrderBy
+    给集合排序 默认升序
+        1)var LinQVar = list.OrderBy(n => n); （按照n去排序 如果是n.x则按照n.x去排序）
+        2)var LinQVar = list.OrderBy(n => n,IComparer比较器);
+        3）var sortedWords = from word in words
+                  orderby word.Length
+                  select word;
+        4）降序 var sortedDoubles = from d in doubles
+                    orderby d descending
+                    select d;
+        5）var LinQVar = list.OrderByDescending(n => n,IComparer比较器);
+    8.ThenBy 和 ThenByDescending 
+    在 OrderBy或者 OrderByDescending  后用，意义是在前者排序基础上，再按照某个式子排序（连用两次orderby是没有意义的
+        1）var sortedWords = words.OrderBy(a => a.Length).ThenBy(a => a);
+    9.Reverse
+    将集合反转
+        1）list.Reverse() 
+    10.ToHashSet
+    将一个 IEnumerable<T> 转换为 HashSet<T> 特点为集合内没有重复元素。适合查找。
+
         
     
